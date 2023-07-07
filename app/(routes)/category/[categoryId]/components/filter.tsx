@@ -64,7 +64,7 @@ const Filter: React.FC<FilterProps> = ({
                 ))}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Filter
+export default Filter;
