@@ -16,8 +16,8 @@ interface CategoryPageProps {
         categoryId: string;
     },
     searchParams: {
-        colorId?: string;
-        sizeId?: string;
+        colorId: string;
+        sizeId: string;
     }
 }
 
@@ -26,16 +26,11 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     params,
     searchParams
 }) => {
-    let products;
-    if (searchParams.colorId && searchParams.sizeId) {
-        products = await getProducts({
-            categoryId: params.categoryId,
-            colorId: searchParams.colorId,
-            sizeId: searchParams.sizeId,
-        });
-    } else {
-        products = await getProducts({ categoryId: params.categoryId });
-    }
+    const products = await getProducts({ 
+        categoryId: params.categoryId,
+        colorId: searchParams.colorId,
+        sizeId: searchParams.sizeId,
+    });
 
     const sizes = await getSizes();
     const colors = await getColors();
