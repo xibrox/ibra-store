@@ -22,6 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="cs">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      
       <body className={font.className}>
         <ModalProvider />
         <ToastProvider />

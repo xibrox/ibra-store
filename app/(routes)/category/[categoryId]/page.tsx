@@ -26,7 +26,7 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     params,
     searchParams
 }) => {
-    const products = await getProducts({ 
+    const products = await getProducts({
         categoryId: params.categoryId,
         colorId: searchParams.colorId,
         sizeId: searchParams.sizeId,
